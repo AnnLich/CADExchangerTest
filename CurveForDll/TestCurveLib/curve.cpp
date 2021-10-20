@@ -113,12 +113,12 @@ void Helix::fillRandomParams()
 
 Point3D Helix::getPoint3D(const double t) const
 {
-    return Point3D{ radius * std::cos(t), radius * std::sin(t), step * t };
+    return Point3D{ radius * std::cos(t), radius * std::sin(t), step * t / (2 * std::numbers::pi) };
 }
 
 Point3D Helix::getFirstDerivative(const double t) const
 {
-    return Point3D{ radius * (-std::sin(t)), radius * std::cos(t), step };
+    return Point3D{ radius * (-std::sin(t)), radius * std::cos(t), step / (2 * std::numbers::pi)  };
 }
 
 void Helix::printCurve(const double t) const
